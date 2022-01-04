@@ -1,0 +1,43 @@
+body {
+    background-color: bisque;
+    background-image: url('https://img.bestrecipes.com.au/nLxEnvhv/w643-h428-cfill-q90/br/2019/06/fortune-cookies-952758-1.jpg')
+    }
+
+h1 {
+    color: crimson;
+    font-size: 48px;
+    background-color: white;
+}
+
+h2 {
+    color: crimson;
+    font-size: 36px;
+}
+
+div {
+    background-color: #bdb76b;
+    border: 3px solid black;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#fortune-section {
+    display: flex;
+}
+
+#fortune-form {
+    border: 2px solid brown;
+    background-color: rgb(211, 152, 152) ;
+    height: 250px;
+    align-items: center;
+    width: 450px;
+}   
+
+button {
+    width: 150px;
+    height: 100px;
+    border: 5px solid black;
+    margin: 10px;
+    background-color: khaki;
+}

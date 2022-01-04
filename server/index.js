@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 
+const ctrl = require('./controller')
+
 const app = express();
 
 
@@ -21,5 +23,8 @@ app.get("/api/compliment", (req, res) => {
   res.status(200).send(randomCompliment);
   
 });
+
+app.get('/api/fortunes', ctrl.getFortunesBackEnd)
+app.delete('/api/fortunes/:id', ctrl.deleteFortuneBackEnd)
 
 app.listen(4000, () => console.log("Server running on 4000"));
