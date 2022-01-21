@@ -34,7 +34,7 @@ function displayFortunes(fortuneArr) {
 
         fortuneContainer.appendChild(fortuneCard)
 
-        deleteBtn.addEventListener('click', () => {deleteFortuneFront(fortuneObj.id)})
+        deleteBtn.addEventListener('click', () => {deleteFortuneFront(fortune.id)})
 
     })
 }
@@ -51,3 +51,5 @@ function deleteFortuneFront(id) {
     axios.delete(`http://localhost:4000/api/fortunes/${id}`)
     .then(res => displayFortunes(res.data))
 }
+
+
