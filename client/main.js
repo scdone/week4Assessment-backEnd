@@ -35,6 +35,7 @@ function displayFortunes(fortuneArr) {
         fortuneContainer.appendChild(fortuneCard)
 
         deleteBtn.addEventListener('click', () => {deleteFortuneFront(fortune.id)})
+        luckyNumberBtn.addEventListener('click', () => luckyNumberFront(fortune.id))
 
     })
 }
@@ -52,4 +53,24 @@ function deleteFortuneFront(id) {
     .then(res => displayFortunes(res.data))
 }
 
+function luckyNumberFront(id) {
+    axios.put(`http://localhost:4000/api/fortunes/${id}`)
+    .then(res => displayFortunes(res.data))
+}
 
+function addFortuneFront(event) {
+    event.preventDefault()
+    let body = {
+        fortune: fortuneInput.value,
+        luckyNumber: numberInput.value
+    }
+
+    axios.post(`http://localhost:4000/api/fortunes`, body)
+    .then(res => {
+        fortuneInput.value = ``
+        numberInput.value = ``
+        displayFortunes(res.data)
+    })
+}
+
+addFortuneForm.addEventListener('submit', addFortuneFront)

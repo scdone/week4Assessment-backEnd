@@ -26,5 +26,7 @@ app.get("/api/compliment", (req, res) => {
 
 app.get('/api/fortunes', ctrl.getFortunesBackEnd)
 app.delete('/api/fortunes/:id', ctrl.deleteFortuneBackEnd)
+app.put('/api/fortunes/:id', ctrl.luckyNumberBackEnd)
+app.post('/api/fortunes', ctrl.addFortuneBackEnd)
 
 app.listen(4000, () => console.log("Server running on 4000"));
